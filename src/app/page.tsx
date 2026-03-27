@@ -262,7 +262,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-start">
 
             {/* ── Columna izquierda: copy ── */}
-            <div className="lg:-mt-8 lg:sticky lg:top-28">
+            <div>
               <p className="text-xs font-semibold tracking-[0.3em] uppercase text-foreground/30 mb-5">
                 Contacto
               </p>
