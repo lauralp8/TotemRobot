@@ -222,7 +222,7 @@ export default function CampanasList({ campanas }: { campanas: Campana[] }) {
           return (
             <article
               key={c.id}
-              className="campaign-card group relative rounded-3xl border border-black/[0.09] bg-[#0d0d0d] overflow-hidden cursor-pointer"
+              className="campaign-card group relative rounded-3xl border border-white/[0.08] bg-[#141414] overflow-hidden cursor-pointer"
               style={{ "--glow-rgb": c.glowColor } as React.CSSProperties}
               onClick={() => setActiva(c)}
               tabIndex={0}
@@ -234,9 +234,14 @@ export default function CampanasList({ campanas }: { campanas: Campana[] }) {
 
                 {/* ── Visual ── */}
                 <div className="relative lg:col-span-2 min-h-[280px] lg:min-h-[400px] overflow-hidden">
-                  {c.hasGallery ? (
-                    <div className="absolute inset-0 pointer-events-none">
-                      <AnaaGallery />
+                {c.hasGallery ? (
+                    <div className="absolute inset-0">
+                      <img
+                        src="/images/anaa/anaa-1.jpg"
+                        alt="Campaña ANAA"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/60 to-transparent" />
                     </div>
                   ) : (
                     <div
@@ -284,10 +289,10 @@ export default function CampanasList({ campanas }: { campanas: Campana[] }) {
                         ★ Destacado
                       </span>
                     )}
-                    <span className="text-[11px] text-white/25 tracking-wider ml-auto">{c.fecha}</span>
+                    <span className="text-[11px] text-white/40 tracking-wider ml-auto">{c.fecha}</span>
                   </div>
 
-                  <p className="text-xs text-white/30 tracking-wider mb-3">{c.lugar}</p>
+                  <p className="text-xs text-white/45 tracking-wider mb-3">{c.lugar}</p>
 
                   <h2
                     className="font-black text-white mb-3 leading-tight"
@@ -295,11 +300,11 @@ export default function CampanasList({ campanas }: { campanas: Campana[] }) {
                   >
                     {c.titulo}
                   </h2>
-                  <p className="text-sm font-medium mb-5" style={{ color: c.accentColor, opacity: 0.85 }}>
+                  <p className="text-sm font-medium mb-5" style={{ color: c.accentColor, opacity: 0.95 }}>
                     {c.subtitulo}
                   </p>
 
-                  <p className="text-white/50 leading-relaxed mb-10 max-w-lg line-clamp-3">
+                  <p className="text-white/60 leading-relaxed mb-10 max-w-lg line-clamp-3">
                     {c.resumen}
                   </p>
 
@@ -310,7 +315,7 @@ export default function CampanasList({ campanas }: { campanas: Campana[] }) {
                           <p className="text-3xl font-black leading-none tabular-nums" style={{ color: c.accentColor }}>
                             {m.num}
                           </p>
-                          <p className="text-[10px] text-white/30 tracking-[0.18em] uppercase mt-1.5">{m.label}</p>
+                          <p className="text-[10px] text-white/45 tracking-[0.18em] uppercase mt-1.5">{m.label}</p>
                         </div>
                       ))}
                     </div>
