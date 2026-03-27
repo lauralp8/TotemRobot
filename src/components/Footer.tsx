@@ -49,7 +49,7 @@ export default function Footer() {
             <p className="text-2xl font-bold tracking-tight">
               Totem<span className="gradient-text">Robot</span>
             </p>
-            <p className="text-sm text-white/40 mt-4 leading-relaxed">
+            <p className="text-sm text-white/60 mt-4 leading-relaxed">
               El futuro de la publicidad ya está aquí. Robots que purifican, 
               aromatizan e impactan.
             </p>
@@ -57,14 +57,14 @@ export default function Footer() {
 
           {/* Quick links */}
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/30 mb-2">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/50 mb-2">
               Navegación
             </p>
             {["Inicio", "En Acción", "Beneficios", "Cómo funciona", "Contacto"].map((label) => (
               <a
                 key={label}
                 href={`#${label.toLowerCase().replace(/ /g, "-").replace("ó", "o")}`}
-                className="text-sm text-white/50 hover:text-primary transition-colors duration-300"
+                className="text-sm text-white/70 hover:text-primary transition-colors duration-300"
               >
                 {label}
               </a>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/30 mb-4">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/50 mb-4">
               Síguenos
             </p>
             <div className="flex gap-3">
@@ -83,7 +83,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
                   aria-label={link.label}
                 >
                   {link.icon}
@@ -104,7 +104,7 @@ export default function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-xs text-white/30 hover:text-white/60 transition-colors duration-300"
+                className="text-xs text-white/50 hover:text-white/90 transition-colors duration-300"
               >
                 {link.label}
               </a>
@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-xs text-white/30">
+          <p className="text-xs text-white/50">
             © {new Date().getFullYear()} TotemRobot. Todos los derechos reservados.
           </p>
         </div>

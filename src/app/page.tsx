@@ -1,69 +1,33 @@
+import ScrollVideo from "@/components/ScrollVideo";
+import ModelosSection from "@/components/ModelosSection";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <>
-      {/* ═══════════════════════════════════════
-          HERO — Full screen con glow orbs decorativos
-          ═══════════════════════════════════════ */}
-      <section
-        id="hero"
-        className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 overflow-hidden"
-      >
-        {/* Decorative glow orbs */}
-        <div className="glow-orb w-96 h-96 bg-primary/40 -top-20 -right-20 animate-float" />
-        <div className="glow-orb w-72 h-72 bg-primary/20 bottom-20 -left-20 animate-float delay-300" />
-        <div className="glow-orb w-48 h-48 bg-secondary/30 top-1/3 right-1/4 animate-float delay-500" />
+      {/* ─────────────────────────────────────────────────────────────
+          FONDO UNIFICADO: Hero + Publicidad en movimiento
+          Un solo gradiente que fluye sin costuras entre ambas secciones
+      ────────────────────────────────────────────────────────────────── */}
+      <div style={{ background: "#ffffff" }}>
 
-        {/* Decorative rotating ring */}
-        <div className="absolute w-[600px] h-[600px] md:w-[800px] md:h-[800px] border border-secondary/20 rounded-full animate-spin-slow" />
-        <div className="absolute w-[500px] h-[500px] md:w-[650px] md:h-[650px] border border-primary/10 rounded-full animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
+        {/* ═══════════════════════════════════════
+            HERO — Scroll-driven video del robot
+            ═══════════════════════════════════════ */}
+        <ScrollVideo />
 
-        {/* Content */}
-        <div className="relative z-10">
-          <p className="animate-fade-in-up text-sm md:text-base font-medium tracking-[0.3em] uppercase text-foreground/40 mb-6">
-            El futuro de la publicidad
-          </p>
-          <h1 className="animate-fade-in-up delay-100 text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-foreground">
-            Totem<span className="gradient-text">Robot</span>
-          </h1>
-          <p className="animate-fade-in-up delay-200 mt-6 text-xl md:text-2xl text-foreground/50 max-w-2xl mx-auto font-light leading-relaxed">
-            Captamos miradas. Generamos impacto.
-            <br />
-            <span className="text-foreground/30">Purifica. Aromatiza. Impacta.</span>
-          </p>
-          <div className="animate-fade-in-up delay-300 mt-12 flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <a
-              href="#contacto"
-              className="px-8 py-4 bg-primary text-dark-bg font-semibold rounded-full text-lg hover:bg-primary-hover hover:shadow-[0_0_40px_rgba(246,207,91,0.4)] transition-all duration-500 animate-pulse-glow"
-            >
-              Solicitar información
-            </a>
-            <a
-              href="#en-accion"
-              className="px-8 py-4 border border-foreground/20 text-foreground rounded-full text-lg font-medium hover:border-primary hover:text-primary transition-all duration-300"
-            >
-              Ver en acción ↓
-            </a>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 animate-fade-in delay-600">
-          <div className="w-6 h-10 border-2 border-foreground/20 rounded-full flex justify-center">
-            <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-[bounce_2s_ease-in-out_infinite]" />
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════
-          PUBLICIDAD EN MOVIMIENTO
-          ═══════════════════════════════════════ */}
-      <section className="relative py-32 px-6 overflow-hidden">
-        <div className="glow-orb w-80 h-80 bg-primary/15 top-10 -left-20" />
+        {/* ═══════════════════════════════════════
+            PUBLICIDAD EN MOVIMIENTO
+            ═══════════════════════════════════════ */}
+        <section
+          className="relative px-8 lg:px-16 overflow-hidden"
+          style={{ paddingTop: "8rem", paddingBottom: "10rem" }}
+        >
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-sm font-medium tracking-[0.3em] uppercase text-primary mb-4">Nueva era</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
+              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-foreground/30 mb-5">Nueva era</p>
+              <h2 className="text-5xl lg:text-7xl font-black text-foreground" style={{letterSpacing: "-0.04em", lineHeight: 0.95}}>
                 Publicidad en<br />
                 <span className="gradient-text">movimiento</span>
               </h2>
@@ -90,92 +54,37 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      </div> {/* fin fondo unificado */}
       {/* ═══════════════════════════════════════
-          EN ACCIÓN
+          MARQUEE TICKER
           ═══════════════════════════════════════ */}
-      <section
-        id="en-accion"
-        className="relative py-32 px-6 bg-dark-bg text-white overflow-hidden"
-      >
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-        <div className="glow-orb w-80 h-80 bg-primary/10 top-1/2 right-0" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <p className="text-sm font-medium tracking-[0.3em] uppercase text-primary mb-4">Proyectos reales</p>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight">En Acción</h2>
-            <p className="mt-6 text-lg text-white/40 max-w-2xl mx-auto font-light">
-              Descubre cómo TotemRobot transforma espacios y genera impacto real.
-            </p>
-          </div>
-
-          {/* Proyecto destacado */}
-          <div className="mb-8 group relative rounded-3xl border border-white/10 hover:border-primary/30 transition-colors duration-500 overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative min-h-[300px] bg-white/5 flex items-center justify-center">
-                <div className="text-center text-white/20">
-                  <div className="text-6xl mb-4">🏬</div>
-                  <p className="text-sm">Imagen campaña ANAA</p>
-                </div>
-                <div className="absolute top-6 left-6">
-                  <span className="px-3 py-1 bg-primary text-dark-bg text-xs font-bold rounded-full uppercase tracking-wider">Campaña destacada</span>
-                </div>
-              </div>
-              <div className="p-10 flex flex-col justify-center">
-                <span className="inline-block px-3 py-1 bg-white/10 text-white/60 text-xs font-medium rounded-full mb-6 w-fit">Noviembre 2025</span>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">ANAA promueve la adopción</h3>
-                <p className="text-white/50 leading-relaxed mb-4">
-                  Los centros comerciales <span className="text-white/80">La Vaguada, Príncipe Pío, Centro Oeste, La Viña, Santo Domingo y Las Rosas</span> han apostado por ToTemRoBot para dar visibilidad a esta iniciativa.
-                </p>
-                <p className="text-white/40 leading-relaxed mb-8">
-                  En noviembre de 2025, ToTemRoBot participó en la campaña de la asociación ANAA, que promueve la adopción de animales y su correcto cuidado.
-                </p>
-                <a href="https://anaaweb.org/" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:gap-3 transition-all duration-300">
-                  Visitar ANAA →
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Más proyectos */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: "Campaña en Centros Comerciales", tag: "Retail", desc: "6 centros comerciales simultáneos" },
-              { title: "Lanzamiento de producto", tag: "Eventos", desc: "Próximamente" },
-              { title: "Campaña corporativa", tag: "B2B", desc: "Próximamente" },
-            ].map((project) => (
-              <div key={project.title} className="card-hover group relative aspect-[4/3] rounded-3xl bg-white/5 border border-white/10 overflow-hidden cursor-pointer">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center text-white/10 text-sm">Imagen proyecto</div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full mb-3">{project.tag}</span>
-                  <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-                  <p className="mt-1 text-sm text-white/0 group-hover:text-white/50 transition-colors duration-500">{project.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="relative overflow-hidden bg-foreground py-7">
+        <div className="animate-marquee">
+          {[
+            "Publicidad Móvil", "Purificación de Aire", "Aromatización Ambiental",
+            "Impacto Sensorial", "Movimiento Autónomo", "Campañas Premium", "Displays 360°", "TotemRobot",
+            "Publicidad Móvil", "Purificación de Aire", "Aromatización Ambiental",
+            "Impacto Sensorial", "Movimiento Autónomo", "Campañas Premium", "Displays 360°", "TotemRobot",
+          ].map((item, i) => (
+            <span key={i} className="inline-flex items-center gap-8 px-8 text-base font-black tracking-[0.18em] uppercase text-white whitespace-nowrap">
+              {item} <span style={{color: "#f6cf5b"}}>✦</span>
+            </span>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* ═══════════════════════════════════════
-          QUÉ HACE TOTEMROBOT
-          ═══════════════════════════════════════ */}
       <section
         id="beneficios"
-        className="relative py-32 px-6 overflow-hidden"
+        className="relative py-32 lg:py-40 px-8 lg:px-16 overflow-hidden"
       >
-        <div className="glow-orb w-96 h-96 bg-primary/15 top-20 -right-40" />
-        <div className="glow-orb w-64 h-64 bg-secondary/20 bottom-20 -left-20" />
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <p className="text-sm font-medium tracking-[0.3em] uppercase text-primary mb-4">Innovación & Impacto</p>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+          <div className="text-center mb-20 relative">
+            <p className="relative z-10 text-xs font-semibold tracking-[0.3em] uppercase text-foreground/30 mb-5">Innovación & Impacto</p>
+            <h2 className="relative z-10 font-black text-foreground" style={{fontSize: "clamp(2.8rem, 6vw, 5.5rem)", letterSpacing: "-0.04em", lineHeight: 0.95}}>
               Innovación, impacto y<br />
               <span className="gradient-text">versatilidad</span>
             </h2>
-            <p className="mt-8 text-lg text-foreground/50 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="relative z-10 mt-8 text-lg text-foreground/65 max-w-3xl mx-auto leading-relaxed font-light">
               ToTemRoBot revoluciona la forma de comunicar, captando la atención real del público
               y rompiendo la indiferencia hacia la publicidad estática. Su capacidad para integrar
               estímulos sensoriales —visuales, sonoros y olfativos— genera una experiencia inmersiva
@@ -196,14 +105,14 @@ export default function Home() {
           {/* 3 value props */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {[
-              { icon: "🎯", title: "Impacto sensorial convertido en atención real", desc: "Vista, sonido, fragancia y movimiento combinados para crear una experiencia que el público no puede ignorar." },
-              { icon: "🚀", title: "Publicidad móvil al encuentro del cliente", desc: "El robot va donde está tu audiencia. No espera a que la gente venga a él: se desplaza, llama la atención y genera conversación." },
-              { icon: "🎨", title: "Versatilidad creativa para cualquier campaña", desc: "Destacamos en promociones, lanzamientos de productos, eventos corporativos y otras campañas, adaptándonos a múltiples sectores." },
+              { title: "Impacto sensorial convertido en atención real", desc: "Vista, sonido, fragancia y movimiento combinados para crear una experiencia que el público no puede ignorar." },
+              { title: "Publicidad móvil al encuentro del cliente", desc: "El robot va donde está tu audiencia. No espera a que la gente venga a él: se desplaza, llama la atención y genera conversación." },
+              { title: "Versatilidad creativa para cualquier campaña", desc: "Destacamos en promociones, lanzamientos de productos, eventos corporativos y otras campañas, adaptándonos a múltiples sectores." },
             ].map((item) => (
-              <div key={item.title} className="card-hover group p-10 rounded-3xl bg-white border border-secondary/30 text-left overflow-hidden relative">
+              <div key={item.title} className="card-hover group p-10 rounded-3xl bg-white border border-secondary/30 text-left overflow-hidden relative transition-all duration-500 hover:border-primary hover:shadow-[0_0_0_1px_rgba(246,207,91,1),0_0_40px_rgba(246,207,91,0.55),0_0_100px_rgba(246,207,91,0.25)]">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="text-4xl mb-6">{item.icon}</div>
+                  <div className="w-8 h-px bg-primary mb-7 group-hover:w-14 transition-all duration-500" />
                   <h3 className="text-xl font-bold text-foreground mb-4 leading-tight">{item.title}</h3>
                   <p className="text-foreground/50 leading-relaxed text-sm">{item.desc}</p>
                 </div>
@@ -212,11 +121,52 @@ export default function Home() {
           </div>
 
           {/* Quote */}
-          <div className="text-center p-12 rounded-3xl bg-foreground text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-            <p className="relative z-10 text-2xl md:text-3xl font-light italic text-white/80 max-w-3xl mx-auto leading-relaxed">
-              &ldquo;Mezcla de tecnología, creatividad y experiencias memorables.&rdquo;
-            </p>
+          <div className="flex justify-center mt-8">
+            <div className="relative text-center max-w-2xl mx-auto px-4">
+              {/* Comilla de fondo: grande y decorativa */}
+              <span
+                className="absolute -top-8 left-1/2 -translate-x-1/2 select-none pointer-events-none"
+                style={{ fontSize: "8rem", lineHeight: 1, color: "rgba(246,207,91,0.12)", fontFamily: "Georgia, serif", userSelect: "none" }}
+                aria-hidden
+              >
+                &ldquo;
+              </span>
+
+              <p
+                className="relative font-medium text-foreground/55"
+                style={{ fontSize: "clamp(1rem, 1.8vw, 1.2rem)", letterSpacing: "-0.01em" }}
+              >
+                Mezcla de tecnología, creatividad y{" "}
+                <span
+                  className="font-black"
+                  style={{
+                    background: "linear-gradient(90deg, #c9a227 0%, #f6cf5b 35%, #ffe99a 55%, #f6cf5b 75%, #c9a227 100%)",
+                    backgroundSize: "250% auto",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    animation: "shimmer 3s linear infinite",
+                    letterSpacing: "-0.025em",
+                  }}
+                >
+                  experiencias memorables
+                </span>
+                .
+              </p>
+
+              {/* Línea dorada animada debajo */}
+              <div className="mt-5 flex justify-center">
+                <div
+                  style={{
+                    height: "1px",
+                    width: "5rem",
+                    background: "linear-gradient(90deg, transparent, #f6cf5b, transparent)",
+                    backgroundSize: "200% auto",
+                    animation: "shimmer 2.5s linear infinite",
+                  }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -226,26 +176,27 @@ export default function Home() {
           ═══════════════════════════════════════ */}
       <section
         id="como-funciona"
-        className="relative py-32 px-6 bg-dark-bg text-white overflow-hidden"
+        className="relative py-32 lg:py-40 px-8 lg:px-16 bg-dark-bg text-white overflow-hidden"
       >
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div className="absolute inset-0 grid-texture" />
         <div className="glow-orb w-96 h-96 bg-primary/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         <div className="max-w-7xl mx-auto relative z-10">
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-24">
             {/* Por qué elegirnos */}
             <div>
-              <p className="text-sm font-medium tracking-[0.3em] uppercase text-primary mb-4">Nuestro servicio</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-5">Nuestro servicio</p>
+              <h2 className="text-5xl lg:text-6xl font-black leading-[0.95]" style={{letterSpacing: "-0.04em"}}>
                 ¿Por qué elegir<br />
                 <span className="gradient-text">ToTemRoBot</span>?
               </h2>
-              <p className="mt-8 text-lg text-white/50 leading-relaxed">
+              <p className="mt-8 text-lg text-white/80 leading-relaxed">
                 Si buscas sorprender o dinamizar tus espacios, ToTemRoBot se adapta a tu estrategia.
                 Nos encargamos de la tecnología, la programación y el soporte para que tú potencies
                 tu mensaje.
               </p>
-              <p className="mt-4 text-white/40 leading-relaxed">
+              <p className="mt-4 text-white/60 leading-relaxed">
                 Todo lo que necesitas para transformar una campaña común en una experiencia inolvidable.
               </p>
             </div>
@@ -264,7 +215,7 @@ export default function Home() {
                     <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
                       <div className="w-2 h-2 rounded-full bg-primary group-hover:bg-dark-bg transition-colors duration-300" />
                     </div>
-                    <p className="text-white/60 group-hover:text-white/90 transition-colors duration-300 leading-relaxed">{item}</p>
+                    <p className="text-white/80 group-hover:text-white transition-colors duration-300 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -272,27 +223,7 @@ export default function Home() {
           </div>
 
           {/* Modelos de robot */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { name: "Modelo Estándar", desc: "Ideal para centros comerciales y grandes superficies. Máximo impacto visual con amplia pantalla publicitaria." },
-              { name: "Modelo Premium", desc: "Perfecto para eventos y campañas especiales. Diseño premium con tecnología de aromatización avanzada." },
-            ].map((robot) => (
-              <div key={robot.name} className="card-hover group relative aspect-[3/2] rounded-3xl bg-white/5 border border-white/10 overflow-hidden hover:border-primary/30 transition-colors duration-500">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white/10">
-                    <div className="text-7xl mb-4">🤖</div>
-                    <p className="text-sm">Imagen del {robot.name}</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">{robot.name}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{robot.desc}</p>
-                  <div className="mt-4 inline-flex items-center gap-2 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">Ver detalles →</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ModelosSection />
         </div>
       </section>
 
@@ -301,60 +232,145 @@ export default function Home() {
           ═══════════════════════════════════════ */}
       <section
         id="contacto"
-        className="relative py-32 px-6 overflow-hidden"
+        className="relative py-32 lg:py-40 px-8 lg:px-16 overflow-hidden"
+        style={{ background: "#ffffff" }}
       >
-        <div className="glow-orb w-96 h-96 bg-primary/15 -top-20 right-1/4" />
+        {/* Key light dorado — espejo del hero */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: "radial-gradient(ellipse 55% 70% at 100% 0%, rgba(246,207,91,0.22) 0%, rgba(246,207,91,0.07) 45%, transparent 65%)",
+        }} />
+        {/* Aura secundaria izquierda */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: "radial-gradient(ellipse 45% 55% at -5% 100%, rgba(246,207,91,0.12) 0%, transparent 60%)",
+        }} />
+        {/* Fill light frío sutil */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: "radial-gradient(ellipse 40% 50% at 50% 50%, rgba(175,190,212,0.06) 0%, transparent 70%)",
+        }} />
+        {/* Film grain */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          opacity: 0.38,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E")`,
+          backgroundSize: "300px 300px",
+        }} />
+        {/* Vignette */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: "radial-gradient(ellipse 90% 88% at 50% 50%, transparent 50%, rgba(0,0,0,0.055) 100%)",
+        }} />
 
-        <div className="max-w-3xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <p className="text-sm font-medium tracking-[0.3em] uppercase text-primary mb-4">
-              Contacto
-            </p>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
-              Hablemos
-            </h2>
-            <p className="mt-6 text-lg text-foreground/40 max-w-2xl mx-auto font-light">
-              ¿Quieres TotemRobot en tu negocio? Cuéntanos tu idea y te respondemos en menos de 24h.
-            </p>
-          </div>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-start">
 
-          <form className="flex flex-col gap-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <input
-                type="text"
-                placeholder="Nombre"
-                className="w-full px-5 py-4 rounded-2xl border border-secondary/50 bg-white text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-300"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full px-5 py-4 rounded-2xl border border-secondary/50 bg-white text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-300"
-              />
+            {/* ── Columna izquierda: copy ── */}
+            <div className="lg:-mt-8 lg:sticky lg:top-28">
+              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-foreground/30 mb-5">
+                Contacto
+              </p>
+              <h2
+                className="font-black text-foreground mb-6"
+                style={{ fontSize: "clamp(2.8rem, 5vw, 4.5rem)", letterSpacing: "-0.04em", lineHeight: 0.95 }}
+              >
+                Hablemos
+              </h2>
+              <div className="w-10 h-px mb-7" style={{ background: "linear-gradient(90deg, #f6cf5b, transparent)" }} />
+              <p className="text-lg text-foreground/45 font-light leading-relaxed mb-10">
+                ¿Quieres TotemRobot en tu negocio?
+                Cuéntanos tu idea y te respondemos en{" "}
+                <span className="font-semibold text-foreground/70">menos de 24h</span>.
+              </p>
+
+              {/* Trust signals */}
+              <div className="flex flex-col gap-4">
+                {[
+                  { icon: "⚡", label: "Respuesta en menos de 24h" },
+                  { icon: "✦", label: "Sin compromiso ni permanencia" },
+                  { icon: "◈", label: "Presupuesto personalizado" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-3.5">
+                    <span
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs shrink-0"
+                      style={{ background: "rgba(246,207,91,0.12)", color: "#a07800" }}
+                    >
+                      {item.icon}
+                    </span>
+                    <span className="text-sm text-foreground/50 font-medium">{item.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <input
-                type="tel"
-                placeholder="Teléfono"
-                className="w-full px-5 py-4 rounded-2xl border border-secondary/50 bg-white text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-300"
-              />
-              <input
-                type="text"
-                placeholder="Empresa"
-                className="w-full px-5 py-4 rounded-2xl border border-secondary/50 bg-white text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-300"
-              />
-            </div>
-            <textarea
-              placeholder="Cuéntanos tu proyecto..."
-              rows={5}
-              className="w-full px-5 py-4 rounded-2xl border border-secondary/50 bg-white text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-300 resize-none"
-            />
-            <button
-              type="submit"
-              className="mt-4 px-10 py-4 bg-primary text-dark-bg font-semibold rounded-full text-lg hover:bg-primary-hover hover:shadow-[0_0_40px_rgba(246,207,91,0.4)] transition-all duration-500 self-center"
+
+            {/* ── Columna derecha: formulario ── */}
+            <div
+              className="rounded-3xl p-8 md:p-10"
+              style={{
+                background: "rgba(255,255,255,0.75)",
+                backdropFilter: "blur(24px)",
+                boxShadow: "0 0 0 1px rgba(0,0,0,0.06), 0 8px 24px -4px rgba(0,0,0,0.07), 0 32px 64px -12px rgba(0,0,0,0.09)",
+              }}
             >
-              Enviar mensaje
-            </button>
-          </form>
+              <form className="flex flex-col gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[11px] font-semibold tracking-[0.12em] uppercase text-foreground/35">Nombre</label>
+                    <input
+                      type="text"
+                      placeholder="Tu nombre"
+                      className="w-full px-4 py-3.5 rounded-xl bg-black/[0.025] border border-black/[0.07] text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary focus:bg-primary/[0.03] transition-all duration-300 text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[11px] font-semibold tracking-[0.12em] uppercase text-foreground/35">Email</label>
+                    <input
+                      type="email"
+                      placeholder="tu@empresa.com"
+                      className="w-full px-4 py-3.5 rounded-xl bg-black/[0.025] border border-black/[0.07] text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary focus:bg-primary/[0.03] transition-all duration-300 text-sm"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[11px] font-semibold tracking-[0.12em] uppercase text-foreground/35">Teléfono</label>
+                    <input
+                      type="tel"
+                      placeholder="+34 600 000 000"
+                      className="w-full px-4 py-3.5 rounded-xl bg-black/[0.025] border border-black/[0.07] text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary focus:bg-primary/[0.03] transition-all duration-300 text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[11px] font-semibold tracking-[0.12em] uppercase text-foreground/35">Empresa</label>
+                    <input
+                      type="text"
+                      placeholder="Nombre de tu empresa"
+                      className="w-full px-4 py-3.5 rounded-xl bg-black/[0.025] border border-black/[0.07] text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary focus:bg-primary/[0.03] transition-all duration-300 text-sm"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[11px] font-semibold tracking-[0.12em] uppercase text-foreground/35">Tu proyecto</label>
+                  <textarea
+                    placeholder="Cuéntanos dónde quieres el robot, qué campaña tienes en mente..."
+                    rows={4}
+                    className="w-full px-4 py-3.5 rounded-xl bg-black/[0.025] border border-black/[0.07] text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary focus:bg-primary/[0.03] transition-all duration-300 resize-none text-sm"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="mt-1 w-full py-4 font-black rounded-xl text-sm tracking-wide transition-all duration-300 relative overflow-hidden group hover:shadow-[0_0_40px_rgba(246,207,91,0.35)] hover:scale-[1.01]"
+                  style={{ background: "#1d1d1f", color: "#ffffff" }}
+                >
+                  <span className="relative z-10">Enviar mensaje</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/15 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                </button>
+              </form>
+
+              <p className="mt-6 text-center text-[11px] text-foreground/25 flex items-center justify-center gap-2 tracking-wide">
+                <span style={{ color: "#f6cf5b" }}>✦</span>
+                Respondemos en menos de 24 horas · Sin compromiso
+                <span style={{ color: "#f6cf5b" }}>✦</span>
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
     </>

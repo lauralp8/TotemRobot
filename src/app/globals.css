@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
+  --background: #ffffff;
   --foreground: #1d1d1f;
   --primary: #f6cf5b;
   --primary-hover: #e5be4a;
@@ -19,9 +19,17 @@
   --font-sans: var(--font-inter);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+section[id] {
+  scroll-margin-top: 4.5rem;
 }
 
 /* ═══════════════════════════════════════
@@ -109,6 +117,15 @@ body {
   animation: whatsapp-pulse 2s ease-in-out infinite;
 }
 
+@keyframes hero-aurora {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-hero-aurora {
+  animation: hero-aurora 80s linear infinite;
+}
+
 /* Stagger delays for children */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
@@ -183,4 +200,52 @@ body {
 .section-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+}
+
+/* Campaign card neon hover via CSS custom property */
+.campaign-card {
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+.campaign-card:hover {
+  border-color: rgba(var(--glow-rgb), 1);
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1.5px rgba(var(--glow-rgb), 1),
+    0 0 20px  0   rgba(var(--glow-rgb), 0.95),
+    0 0 50px  0   rgba(var(--glow-rgb), 0.80),
+    0 0 100px 0   rgba(var(--glow-rgb), 0.55),
+    0 0 200px 0   rgba(var(--glow-rgb), 0.30),
+    0 0 350px 0   rgba(var(--glow-rgb), 0.15),
+    inset 0 0 60px  0 rgba(var(--glow-rgb), 0.12),
+    inset 0 0 120px 0 rgba(var(--glow-rgb), 0.07);
+}
+
+/* ═══════════════════════════════════════
+   MARQUEE TICKER
+   ═══════════════════════════════════════ */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ═══════════════════════════════════════
+   SUBTLE GRID TEXTURE (dark sections)
+   ═══════════════════════════════════════ */
+
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
