@@ -143,22 +143,18 @@ function Modal({ campana, onClose }: { campana: Campana; onClose: () => void }) 
               <p className="text-black/45 leading-relaxed mb-12 text-sm">{c.descripcionLarga}</p>
             )}
 
-            {/* Métricas */}
-            <div
-              className="grid grid-cols-3 gap-4 py-8 border-y mb-12"
-              style={{ borderColor: `${c.accentColor}25` }}
-            >
-              {c.metricas.map((m) => (
-                <div key={m.label} className="text-center">
-                  <p
-                    className="text-4xl md:text-5xl font-black leading-none tabular-nums mb-2"
-                    style={{ color: c.accentColor === "#f6cf5b" ? "#b08900" : c.accentColor }}
-                  >
-                    {m.num}
-                  </p>
-                  <p className="text-[10px] text-black/35 tracking-[0.18em] uppercase">{m.label}</p>
-                </div>
-              ))}
+            {/* Categoría */}
+            <div className="py-6 border-y mb-8" style={{ borderColor: `${c.accentColor}25` }}>
+              <span
+                className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider"
+                style={{
+                  background: `${c.accentColor}18`,
+                  color: c.accentColor === "#f6cf5b" ? "#a07800" : c.accentColor,
+                  border: `1px solid ${c.accentColor}40`,
+                }}
+              >
+                {c.categoria}
+              </span>
             </div>
 
             {/* Placeholder para imágenes adicionales */}
@@ -274,16 +270,6 @@ export default function CampanasList({ campanas }: { campanas: Campana[] }) {
                 {/* ── Contenido ── */}
                 <div className="lg:col-span-3 flex flex-col justify-center p-8 lg:p-12 xl:p-16">
                   <div className="flex flex-wrap items-center gap-3 mb-6">
-                    <span
-                      className="px-3 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider"
-                      style={{
-                        background: `rgba(${c.glowColor}, 0.15)`,
-                        color: c.accentColor,
-                        border: `1px solid rgba(${c.glowColor}, 0.35)`,
-                      }}
-                    >
-                      {c.categoria}
-                    </span>
                     {c.destacada && (
                       <span className="px-2.5 py-1 bg-primary text-dark-bg text-[10px] font-black rounded-full uppercase tracking-wider">
                         ★ Destacado
@@ -308,17 +294,18 @@ export default function CampanasList({ campanas }: { campanas: Campana[] }) {
                     {c.resumen}
                   </p>
 
-                  <div className="flex items-end justify-between">
-                    <div className="flex gap-10">
-                      {c.metricas.map((m) => (
-                        <div key={m.label}>
-                          <p className="text-3xl font-black leading-none tabular-nums" style={{ color: c.accentColor }}>
-                            {m.num}
-                          </p>
-                          <p className="text-[10px] text-white/45 tracking-[0.18em] uppercase mt-1.5">{m.label}</p>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="flex items-center justify-between">
+                    {/* Categoría */}
+                    <span
+                      className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider"
+                      style={{
+                        background: `rgba(${c.glowColor}, 0.12)`,
+                        color: c.accentColor,
+                        border: `1px solid rgba(${c.glowColor}, 0.25)`,
+                      }}
+                    >
+                      {c.categoria}
+                    </span>
                     {/* CTA hint */}
                     <span
                       className="inline-flex items-center gap-1.5 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
