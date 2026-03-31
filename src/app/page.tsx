@@ -68,7 +68,7 @@ export default function Home() {
             "Impacto Sensorial", "Movimiento Autónomo", "Campañas Premium", "Displays 360°", "TotemRobot",
           ].map((item, i) => (
             <span key={i} className="inline-flex items-center gap-8 px-8 text-base font-black tracking-[0.18em] uppercase text-white whitespace-nowrap">
-              {item} <span style={{color: "#f6cf5b"}}>✦</span>
+              {item} <span style={{color: "#fbcf55"}}>✦</span>
             </span>
           ))}
         </div>
@@ -141,7 +141,7 @@ export default function Home() {
                 <span
                   className="font-black"
                   style={{
-                    background: "linear-gradient(90deg, #c9a227 0%, #f6cf5b 35%, #ffe99a 55%, #f6cf5b 75%, #c9a227 100%)",
+                    background: "linear-gradient(90deg, #c9a227 0%, #fbcf55 35%, #ffe99a 55%, #fbcf55 75%, #c9a227 100%)",
                     backgroundSize: "250% auto",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
@@ -161,7 +161,7 @@ export default function Home() {
                   style={{
                     height: "1px",
                     width: "5rem",
-                    background: "linear-gradient(90deg, transparent, #f6cf5b, transparent)",
+                    background: "linear-gradient(90deg, transparent, #fbcf55, transparent)",
                     backgroundSize: "200% auto",
                     animation: "shimmer 2.5s linear infinite",
                   }}
@@ -273,7 +273,7 @@ export default function Home() {
               >
                 Hablemos
               </h2>
-              <div className="w-10 h-px mb-7" style={{ background: "linear-gradient(90deg, #f6cf5b, transparent)" }} />
+              <div className="w-10 h-px mb-7" style={{ background: "linear-gradient(90deg, #fbcf55, transparent)" }} />
               <p className="text-lg text-foreground/45 font-light leading-relaxed mb-10">
                 ¿Quieres TotemRobot en tu negocio?
                 Cuéntanos tu idea y te respondemos en{" "}
@@ -365,9 +365,9 @@ export default function Home() {
               </form>
 
               <p className="mt-6 text-center text-[11px] text-foreground/25 flex items-center justify-center gap-2 tracking-wide">
-                <span style={{ color: "#f6cf5b" }}>✦</span>
+                <span style={{ color: "#fbcf55" }}>✦</span>
                 Respondemos en menos de 24 horas · Sin compromiso
-                <span style={{ color: "#f6cf5b" }}>✦</span>
+                <span style={{ color: "#fbcf55" }}>✦</span>
               </p>
             </div>
 

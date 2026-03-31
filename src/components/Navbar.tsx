@@ -52,15 +52,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 lg:px-16 flex items-center justify-between h-16">
         {/* Logo — mismo peso que el H1 del hero */}
-        <Link
-          href="/"
-          className="font-black tracking-[-0.04em] group text-foreground"
-          style={{ fontSize: "1.25rem" }}
-        >
-          Totem
-          <span className="gradient-text transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(246,207,91,0.5)]">
-            Robot
-          </span>
+        <Link href="/" className="flex items-center">
+          <img
+            src="/images/logo.png"
+            alt="TotemRobot"
+            className="h-9 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop links */}

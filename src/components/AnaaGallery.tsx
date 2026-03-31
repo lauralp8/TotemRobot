@@ -3,12 +3,16 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
-// Cuando tengas las fotos, ponlas en public/images/anaa/
-// con los nombres anaa-1.jpg … anaa-9.jpg
-const DEFAULT_IMAGES = Array.from({ length: 9 }, (_, i) => ({
-  src: `/images/anaa/anaa-${i + 1}.jpg`,
-  alt: `Campaña ANAA · TotemRobot · foto ${i + 1}`,
-}));
+const DEFAULT_IMAGES = [
+  { src: "/images/anaa1.JPG",  alt: "Campaña ANAA · TotemRobot · foto 1" },
+  { src: "/images/anaa2.JPG",  alt: "Campaña ANAA · TotemRobot · foto 2" },
+  { src: "/images/anaa3.JPG",  alt: "Campaña ANAA · TotemRobot · foto 3" },
+  { src: "/images/anaa4.JPG",  alt: "Campaña ANAA · TotemRobot · foto 4" },
+  { src: "/images/anaa5.jpg",  alt: "Campaña ANAA · TotemRobot · foto 5" },
+  { src: "/images/anaa6.jpg",  alt: "Campaña ANAA · TotemRobot · foto 6" },
+  { src: "/images/anaa7.jpg",  alt: "Campaña ANAA · TotemRobot · foto 7" },
+  { src: "/images/anaa8.jpg",  alt: "Campaña ANAA · TotemRobot · foto 8" },
+];
 
 export default function AnaaGallery({ images }: { images?: string[] }) {
   const IMAGES = images

@@ -14,12 +14,12 @@ const campanas: Campana[] = [
     fecha: "Noviembre 2025",
     lugar: "Madrid · 6 centros comerciales",
     categoria: "Causa social",
-    accentColor: "#f6cf5b",
+    accentColor: "#fbcf55",
     glowColor: "246,207,91",
     resumen:
-      "La Vaguada, Príncipe Pío, Centro Oeste, La Viña, Santo Domingo y Las Rosas apostaron por ToTemRoBot para dar visibilidad a la adopción de animales de forma móvil y memorable.",
+      "En colaboración con ANAA (Asociación de Animales Rescatados), ToTemRoBot recorrió La Vaguada, Príncipe Pío, Centro Oeste, La Viña, Santo Domingo y Las Rosas para acercar la adopción animal a miles de personas de forma móvil y memorable.",
     descripcionLarga:
-      "Durante 4 semanas de noviembre de 2025, ToTemRoBot recorrió los pasillos de los principales centros comerciales de Madrid promoviendo la adopción responsable de animales. La combinación de movimiento autónomo, aromatización y la pantalla en 360° captó la atención de miles de visitantes, convirtiendo una causa social en una experiencia sensorial única.",
+      "Durante 4 semanas de noviembre de 2025, ToTemRoBot colaboró junto a ANAA — Asociación de Animales Rescatados — recorriendo los pasillos de los principales centros comerciales de Madrid para promover la adopción responsable. El movimiento autónomo del robot, su sistema de aromatización y la pantalla en 360° crearon una experiencia única que conectó emocionalmente con los visitantes, dando visibilidad real a los animales en espera de un hogar.",
     metricas: [
       { num: "6", label: "Centros" },
       { num: "4", label: "Semanas" },
@@ -27,15 +27,14 @@ const campanas: Campana[] = [
     ],
     hasGallery: true,
     galleryImages: [
-      "/images/anaa/anaa-1.jpg",
-      "/images/anaa/anaa-2.jpg",
-      "/images/anaa/anaa-3.jpg",
-      "/images/anaa/anaa-4.jpg",
-      "/images/anaa/anaa-5.jpg",
-      "/images/anaa/anaa-6.jpg",
-      "/images/anaa/anaa-7.jpg",
-      "/images/anaa/anaa-8.jpg",
-      "/images/anaa/anaa-9.jpg",
+      "/images/anaa1.JPG",
+      "/images/anaa2.JPG",
+      "/images/anaa3.JPG",
+      "/images/anaa4.JPG",
+      "/images/anaa5.jpg",
+      "/images/anaa6.jpg",
+      "/images/anaa7.jpg",
+      "/images/anaa8.jpg",
     ],
     destacada: true,
   },
@@ -44,7 +43,7 @@ const campanas: Campana[] = [
     titulo: "Halloween de otro mundo",
     subtitulo: "Concepto de campaña · Halloween",
     fecha: "Próximo octubre",
-    lugar: "Madrid · Centros de ocio",
+    lugar: "Cualquier ciudad · Centros y espacios de ocio",
     categoria: "Entretenimiento",
     accentColor: "#fb923c",
     glowColor: "251,146,60",
@@ -72,7 +71,7 @@ const campanas: Campana[] = [
     titulo: "Magia navideña en movimiento",
     subtitulo: "Concepto de campaña · Navidad",
     fecha: "Próxima navidad",
-    lugar: "Madrid · Centros comerciales",
+    lugar: "Cualquier ciudad · Centros y espacios comerciales",
     categoria: "Retail · Navidad",
     accentColor: "#f87171",
     glowColor: "248,113,113",
@@ -119,47 +118,15 @@ export default function EnAccionPage() {
 
         {/* Imagen del robot — lado derecho */}
         <div className="absolute right-0 bottom-0 top-0 w-1/2 pointer-events-none hidden lg:block">
-          {/* Placeholder: cuando tengas public/images/robot-hero.png reemplaza esto */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "radial-gradient(ellipse at 60% 80%, rgba(246,207,91,0.10) 0%, transparent 55%)",
-            }}
+          <img
+            src="/images/EnAccion.png"
+            alt="TotemRobot en acción"
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
-          {/* Robot placeholder con silueta */}
-          <div className="absolute inset-0 flex items-end justify-center pb-0">
-            <div
-              className="relative flex items-center justify-center"
-              style={{ width: "340px", height: "440px" }}
-            >
-              {/* Glow base del robot */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-16 rounded-full"
-                style={{ background: "radial-gradient(ellipse, rgba(246,207,91,0.3) 0%, transparent 70%)", filter: "blur(20px)" }}
-              />
-              {/* Cuerpo del robot — SVG simplificado */}
-              <svg viewBox="0 0 200 320" fill="none" className="w-full h-full opacity-[0.18]" xmlns="http://www.w3.org/2000/svg">
-                {/* Cabeza */}
-                <rect x="60" y="20" width="80" height="70" rx="16" fill="#f6cf5b" />
-                <rect x="78" y="38" width="18" height="12" rx="4" fill="#0a0a0a" />
-                <rect x="104" y="38" width="18" height="12" rx="4" fill="#0a0a0a" />
-                <rect x="80" y="64" width="40" height="6" rx="3" fill="#0a0a0a" />
-                {/* Cuello */}
-                <rect x="88" y="90" width="24" height="16" rx="4" fill="#f6cf5b" />
-                {/* Cuerpo */}
-                <rect x="40" y="106" width="120" height="120" rx="20" fill="#f6cf5b" />
-                <rect x="60" y="124" width="80" height="60" rx="10" fill="#0a0a0a" />
-                {/* Brazos */}
-                <rect x="10" y="110" width="28" height="90" rx="14" fill="#f6cf5b" />
-                <rect x="162" y="110" width="28" height="90" rx="14" fill="#f6cf5b" />
-                {/* Base/Ruedas */}
-                <rect x="50" y="226" width="100" height="50" rx="16" fill="#f6cf5b" />
-                <ellipse cx="70" cy="286" rx="22" ry="14" fill="#f6cf5b" />
-                <ellipse cx="130" cy="286" rx="22" ry="14" fill="#f6cf5b" />
-              </svg>
-            </div>
-          </div>
           {/* Fade lateral hacia el contenido */}
-          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#fdf8ee] to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-[#fdf8ee] to-transparent" />
+          {/* Fade inferior suave */}
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#fdf8ee] to-transparent" />
         </div>
 
         {/* Contenido del hero */}

@@ -3,9 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #1d1d1f;
-  --primary: #f6cf5b;
-  --primary-hover: #e5be4a;
-  --secondary: #d8d8d8;
+  --primary: #efc650;
+  --primary-hover: #d9b040;
+  --secondary: #d2d3d3;
   --dark-bg: #000000;
 }
 
@@ -148,6 +148,30 @@ section[id] {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.metal-text {
+  background: linear-gradient(
+    105deg,
+    #1a1a1a 0%,
+    #d2d3d3 20%,
+    #f0f0f0 38%,
+    #d2d3d3 50%,
+    #8a8b8b 62%,
+    #2e2e2e 80%,
+    #1a1a1a 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
+  animation: metal-shine 3s ease-in-out infinite;
+}
+
+@keyframes metal-shine {
+  0%   { background-position: 200% center; }
+  50%  { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 .glass {

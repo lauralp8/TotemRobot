@@ -105,7 +105,7 @@ export default function ScrollVideo() {
                   letterSpacing: "-0.05em",
                 }}
               >
-                Totem<span className="gradient-text">Robot</span>
+                <span className="gradient-text">Totem</span><span className="metal-text">Robot</span>
               </h1>
 
               <p
