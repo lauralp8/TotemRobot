@@ -5,12 +5,15 @@ import Image from "next/image";
 
 // Cuando tengas las fotos, ponlas en public/images/anaa/
 // con los nombres anaa-1.jpg … anaa-9.jpg
-const IMAGES = Array.from({ length: 9 }, (_, i) => ({
+const DEFAULT_IMAGES = Array.from({ length: 9 }, (_, i) => ({
   src: `/images/anaa/anaa-${i + 1}.jpg`,
   alt: `Campaña ANAA · TotemRobot · foto ${i + 1}`,
 }));
 
-export default function AnaaGallery() {
+export default function AnaaGallery({ images }: { images?: string[] }) {
+  const IMAGES = images
+    ? images.map((src, i) => ({ src, alt: `Foto ${i + 1}` }))
+    : DEFAULT_IMAGES;
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   const prev = useCallback(() =>
