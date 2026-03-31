@@ -144,7 +144,7 @@ section[id] {
    ═══════════════════════════════════════ */
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary) 0%, #fde68a 50%, var(--primary) 100%);
+  background: linear-gradient(135deg, #d9b040 0%, #efc650 50%, #d9b040 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -153,13 +153,13 @@ section[id] {
 .metal-text {
   background: linear-gradient(
     105deg,
-    #1a1a1a 0%,
-    #d2d3d3 20%,
-    #f0f0f0 38%,
-    #d2d3d3 50%,
-    #8a8b8b 62%,
-    #2e2e2e 80%,
-    #1a1a1a 100%
+    #3a3a3a 0%,
+    #8a8b8b 18%,
+    #d2d3d3 35%,
+    #e8e9e9 50%,
+    #d2d3d3 65%,
+    #7a7b7b 82%,
+    #3a3a3a 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

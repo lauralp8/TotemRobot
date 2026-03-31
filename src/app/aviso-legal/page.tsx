@@ -140,7 +140,7 @@ export default function AvisoLegalPage() {
           >
             Aviso Legal
           </h1>
-          <div className="w-10 h-px mb-6" style={{ background: "linear-gradient(90deg, #fbcf55, transparent)" }} />
+          <div className="w-10 h-px mb-6" style={{ background: "linear-gradient(90deg, #efc650, transparent)" }} />
           <p className="text-sm text-foreground/40">
             Última actualización: marzo 2026
           </p>

@@ -14,7 +14,7 @@ const campanas: Campana[] = [
     fecha: "Noviembre 2025",
     lugar: "Madrid · 6 centros comerciales",
     categoria: "Causa social",
-    accentColor: "#fbcf55",
+    accentColor: "#efc650",
     glowColor: "246,207,91",
     resumen:
       "En colaboración con ANAA (Asociación de Animales Rescatados), ToTemRoBot recorrió La Vaguada, Príncipe Pío, Centro Oeste, La Viña, Santo Domingo y Las Rosas para acercar la adopción animal a miles de personas de forma móvil y memorable.",
